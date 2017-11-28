@@ -16,8 +16,8 @@ from sklearn.svm import SVC
 
 
 """just type 'df_' in order to see the data in spreadsheet form"""
-
 """upload our iris dataset"""
+"""THE PATH BELOW IS OBVIOUSLY GOING TO DIFFER. COPY AND PAST THE PATH IN TH DF_ VARIABLE BELOW"""
 df_ = pd.read_csv('/Users/bennicholl/Desktop/iris.csv', names = ['Id','SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm','Species'],  engine =  'python')
 """the csv I'm upoading from prints the names as the 0'th value, so I just drop them here""" 
 df_ = df_.drop([0])
