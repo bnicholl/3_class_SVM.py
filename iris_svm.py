@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.svm import SVC
 
-# to call 5th index - df.loc[5]
+
 
 """just type 'df_' in order to see the data in spreadsheet form"""
 
@@ -53,7 +53,7 @@ class data():
         self.fig = plt.figure()
         self.ax1 = self.fig.add_subplot(111)
         
-        """these three lines put put each species sepal length on x axis, and sepal width on y axis"""
+        """these three lines put put each species sepal length on x1 axis, and sepal width on x2 axis"""
         """represented as blue diamonds"""
         self.ax1.scatter(self.sertosa_df.T[1], self.sertosa_df.T[2], s = 40, c='b', marker = 'D', label='first')
         """represented as red circles"""
@@ -120,9 +120,6 @@ class data():
         # I'm going to need to rehape this back into a the same dimension as the acutal plot
         """predict whether all of coordinate pairs are a 0, 1, or a 2"""
         self.class_values = lin_svm.predict(x1_x2)
-        
-        # figure out how to utilize decison function with three variables
-        #self.class_values = self.lin_svm.decision_function(self.x1_x2)
         
         self.class_values = self.class_values.reshape(x1mesh.shape)
         """create empty plot"""
