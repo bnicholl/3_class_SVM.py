@@ -91,13 +91,13 @@ class data():
     """type 'linear' for linear function, 'poly' for polynomial function, or 'rbf' for rbf funtion"""
     def perform_svm(self, kernel = 'linear'):
         """creates svm with linear function"""
-        lin_svm = SVC(kernel = kernel, C=1, random_state=0)
+        self.lin_svm = SVC(kernel = kernel, C=1, random_state=0)
         """fits three of our species with there respective classes"""
         x = self.sertosa + self.versicolor + self.virginica
         z = self.class1 + self.class2 + self.class3
         """fit or train our data"""
-        """to predict a class, type   'a.svm.predict([[2, 2]])'   into console"""
-        lin_svm.fit(x,z)        
+        """to predict a class, type   'self.lin_svm.predict([[2, 2]])'   into console"""
+        self.lin_svm.fit(x,z)        
         
         """begin getting our contoured graph ready"""
         """get the max and min of our x1 and x2 directions"""
@@ -119,7 +119,7 @@ class data():
         
         # I'm going to need to rehape this back into a the same dimension as the acutal plot
         """predict whether all of coordinate pairs are a 0, 1, or a 2"""
-        self.class_values = lin_svm.predict(x1_x2)
+        self.class_values = self.lin_svm.predict(x1_x2)
         
         self.class_values = self.class_values.reshape(x1mesh.shape)
         """create empty plot"""
